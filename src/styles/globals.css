@@ -1,0 +1,268 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fondos */
+  --color-bg: #F5F5F2;
+  --color-surface: #FFFFFF;
+
+  /* Tipografía */
+  --color-text: #1A211D;
+  --color-text-muted: #5C6B62;
+
+  /* Marca */
+  --color-primary: #1C442A;
+  --color-secondary: #2E6842;
+
+  /* Acción */
+  --color-accent: #CCA33D;
+  --color-danger: #8A2521;
+
+  /* Fuentes */
+  --font-family-display: var(--font-display), Georgia, serif;
+  --font-family-serif: var(--font-serif), Georgia, serif;
+  --font-family-body: var(--font-body), system-ui, -apple-system, sans-serif;
+
+  /* Sombras */
+  --shadow-warm-sm: 0 1px 2px var(--color-shadow);
+  --shadow-warm-md: 0 4px 12px var(--color-shadow);
+  --shadow-warm-lg: 0 8px 24px var(--color-shadow);
+  --shadow-warm-xl: 0 12px 40px var(--color-shadow);
+  --shadow-warm-hover: 0 12px 32px var(--color-shadow-hover);
+}
+
+:root {
+  /* Fondos */
+  --color-bg:           #F5F5F2;
+  --color-surface:      #FFFFFF;
+
+  /* Tipografía */
+  --color-text:         #1A211D;
+  --color-text-muted:   #5C6B62;
+
+  /* Marca */
+  --color-primary:      #1C442A;
+  --color-secondary:    #2E6842;
+
+  /* Acción */
+  --color-accent:       #CCA33D;
+  --color-danger:       #8A2521;
+
+  /* Derivados */
+  --color-overlay-dark:   rgba(28, 68, 42, 0.7);
+  --color-overlay-light:  rgba(245, 245, 242, 0.9);
+  --color-shadow:         rgba(28, 68, 42, 0.08);
+  --color-shadow-hover:   rgba(28, 68, 42, 0.15);
+  --color-border:         rgba(46, 104, 66, 0.15);
+  --color-border-focus:   rgba(204, 163, 61, 0.5);
+
+  /* Tipografía fluida */
+  --text-hero:    clamp(2.5rem, 5vw + 1rem, 6rem);
+  --text-h1:      clamp(2rem, 3vw + 0.5rem, 4rem);
+  --text-h2:      clamp(1.5rem, 2.5vw + 0.25rem, 2.5rem);
+  --text-h3:      clamp(1.25rem, 1.5vw + 0.25rem, 1.75rem);
+  --text-body:    clamp(0.9375rem, 1vw, 1.125rem);
+  --text-small:   clamp(0.8125rem, 0.9vw, 0.875rem);
+  --text-caption: 0.75rem;
+
+  /* Spacing */
+  --section:        clamp(4rem, 8vw, 8rem);
+  --section-sm:     clamp(2rem, 4vw, 4rem);
+  --container-px:   clamp(1rem, 4vw, 2rem);
+
+  /* Borders & Radius */
+  --radius-sm:    0.375rem;
+  --radius-md:    0.5rem;
+  --radius-lg:    0.75rem;
+  --radius-xl:    1rem;
+  --radius-2xl:   1.5rem;
+  --radius-full:  9999px;
+
+  /* Sombras */
+  --shadow-sm:    0 1px 2px var(--color-shadow);
+  --shadow-md:    0 4px 12px var(--color-shadow);
+  --shadow-lg:    0 8px 24px var(--color-shadow);
+  --shadow-xl:    0 12px 40px var(--color-shadow);
+  --shadow-hover: 0 12px 32px var(--color-shadow-hover);
+
+  /* Duraciones */
+  --duration-fast:    150ms;
+  --duration-normal:  300ms;
+  --duration-slow:    500ms;
+  --duration-slower:  700ms;
+
+  /* Easing */
+  --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-back:    cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-in-out:      cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring:      cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Z-Index */
+  --z-base:       0;
+  --z-dropdown:   10;
+  --z-sticky:     20;
+  --z-overlay:    30;
+  --z-modal:      40;
+  --z-toast:      50;
+  --z-cursor:     9999;
+}
+
+/* Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* scroll-behavior manejado por Lenis — no usar scroll-behavior: smooth aquí */
+  scroll-behavior: auto;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Containers */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: var(--container-px);
+  padding-right: var(--container-px);
+}
+
+.container-narrow {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-left: var(--container-px);
+  padding-right: var(--container-px);
+}
+
+.container-wide {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: var(--container-px);
+  padding-right: var(--container-px);
+}
+
+/* Filtro global para fotos */
+img {
+  filter: saturate(0.95) brightness(1.02) contrast(1.01);
+}
+
+/* Article content — rich text styles */
+.article-content p {
+  margin-bottom: 1.5rem;
+  font-size: var(--text-body);
+  line-height: 1.8;
+}
+
+.article-content h2 {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 700;
+  font-size: var(--text-h2);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--color-primary);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.article-content h3 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 500;
+  font-size: var(--text-h3);
+  letter-spacing: -0.015em;
+  color: var(--color-text);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.article-content blockquote {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-family: var(--font-serif), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--text-h3);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.article-content ul,
+.article-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.article-content ul {
+  list-style: none;
+}
+
+.article-content ul li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-content ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+
+.article-content ol {
+  list-style: decimal;
+}
+
+.article-content ol li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.article-content li::marker {
+  color: var(--color-accent);
+}
+
+.article-content strong {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.article-content a {
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--duration-fast);
+}
+
+.article-content a:hover {
+  color: var(--color-accent);
+}
+
+/* GSAP pin-spacer background — matches the pinned NuestroProceso section */
+.pin-spacer {
+  background: var(--color-bg) !important;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

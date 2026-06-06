@@ -1,0 +1,6 @@
+export { NosotrosHero } from './NosotrosHero'
+export { NuestraHistoria } from './NuestraHistoria'
+export { GoldenCircle } from './GoldenCircle'
+export { PropiedadesMarca } from './PropiedadesMarca'
+export { NuestroProceso } from './NuestroProceso'
+export { CTAProyectos } from './CTAProyectos'

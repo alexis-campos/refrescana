@@ -1,0 +1,73 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+.pnp.cjs
+
+# next.js
+.next/
+out/
+
+# build
+build/
+dist/
+
+# env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
+.vercel
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# os
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ide
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# sanity
+.sanity/
+
+# misc
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# testing
+coverage/
+.nyc_output/
+
+# claude code (personal settings — no compartir)
+.claude/settings.local.json
+
+/src/generated/prisma
+.env
+
+# PHP backend secrets
+backend/config.php
+
+# Uploads (archivos subidos por usuarios — no van al repo)
+uploads/yape/
+# pero sí rastrear la carpeta vacía
+!uploads/.gitkeep
+!uploads/yape/.gitkeep
