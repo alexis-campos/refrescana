@@ -36,6 +36,18 @@ class OrderRepo
         return static::toClientFull($r, static::getItems($id));
     }
 
+    public static function cancelExpiredPending(int $days = 3): int
+    {
+        $stmt = Database::pdo()->prepare('
+            UPDATE orders
+            SET status = "CANCELLED", updated_at = NOW()
+            WHERE status = "PENDING"
+              AND created_at < NOW() - INTERVAL ? DAY
+        ');
+        $stmt->execute([$days]);
+        return $stmt->rowCount();
+    }
+
     public static function updateStatus(string $id, string $status): bool
     {
         $stmt = Database::pdo()->prepare('UPDATE orders SET status=?, updated_at=NOW() WHERE id=?');

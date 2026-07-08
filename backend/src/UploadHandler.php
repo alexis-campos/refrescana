@@ -10,7 +10,7 @@ class UploadHandler
         string $subdir,
         array  $allowedMime,
         int    $maxBytes,
-        string $prefix = 'file',
+        string $prefix = 'file'
     ): string {
         if (($file['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
             throw new \RuntimeException('Error en la subida del archivo');
@@ -26,13 +26,17 @@ class UploadHandler
             throw new \RuntimeException('Tipo de archivo no permitido');
         }
 
-        $ext   = match ($mime) {
-            'image/jpeg' => 'jpg',
-            'image/png'  => 'png',
-            'image/webp' => 'webp',
-            'image/gif'  => 'gif',
-            default      => pathinfo($file['name'] ?? '', PATHINFO_EXTENSION),
-        };
+        if ($mime === 'image/jpeg') {
+            $ext = 'jpg';
+        } elseif ($mime === 'image/png') {
+            $ext = 'png';
+        } elseif ($mime === 'image/webp') {
+            $ext = 'webp';
+        } elseif ($mime === 'image/gif') {
+            $ext = 'gif';
+        } else {
+            $ext = pathinfo($file['name'] ?? '', PATHINFO_EXTENSION);
+        }
 
         $config  = $GLOBALS['__APP_CONFIG__'];
         $dir     = rtrim($config['uploads_dir'], '/') . '/' . $subdir;

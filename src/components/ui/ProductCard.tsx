@@ -27,10 +27,10 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      viewport={{ once: true, margin: '0px' }}
+      transition={{ duration: 0.3, delay: Math.min(index * 0.05, 0.2), ease: [0.16, 1, 0.3, 1] }}
     >
       <Link href={`/productos/${product.slug}`} className="group block h-full">
         <div className="relative flex flex-col h-full overflow-hidden rounded-[var(--radius-xl)] bg-surface shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-hover)] transition-shadow duration-300">

@@ -88,6 +88,8 @@ export const api = {
       createExternal: (formData: FormData) =>
         fetch('/api/admin/orders', { method: 'POST', credentials: 'include', body: formData })
           .then(async (r) => { const d = await r.json(); if (!r.ok) throw new Error(d.error || 'Error'); return d as Order }),
+      cancelExpired: (days = 3) =>
+        http.post<{ cancelled: number }>('/api/admin/orders/cancel-expired', { days }),
     },
 
     blog: {

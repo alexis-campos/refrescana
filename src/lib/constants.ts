@@ -6,8 +6,8 @@ export const SITE_RUC = '20613282620'
 
 export const CONTACT = {
   phones: ['943501918'],
-  email: 'rolinaquino09@gmail.com',
-  whatsapp: '51927137728',
+  email: 'refrescana.com@gmail.com',
+  whatsapp: '943501918',
 } as const
 
 export const NAV_LINKS = [
@@ -47,7 +47,7 @@ export const ANIMATION_DEFAULTS = {
 export const YAPE_CONFIG = {
   phone: '986 854 899',
   holderName: 'Princesa Inka Nature SAC',
-  qrImage: '/public/yape-qr.png', // Reemplazar con QR real
+  qrImage: '/yape-qr.png',
 } as const
 
 // ================= SHIPPING ZONES =================

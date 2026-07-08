@@ -61,6 +61,7 @@ $router->get('/api/admin/orders',                  [AdminOrdersController::class
 $router->post('/api/admin/orders',                 [AdminOrdersController::class, 'create'],        $admin);
 $router->get('/api/admin/orders/:id',              [AdminOrdersController::class, 'get'],           $admin);
 $router->patch('/api/admin/orders/:id',            [AdminOrdersController::class, 'updateStatus'],  $admin);
+$router->post('/api/admin/orders/cancel-expired',  [AdminOrdersController::class, 'cancelExpired'], $admin);
 
 // Admin — blog
 $router->get('/api/admin/blog',                    [AdminBlogController::class, 'list'],            $admin);

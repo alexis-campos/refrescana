@@ -40,7 +40,7 @@ class ContactController
                 'Nuevo Mensaje de Contacto',
                 "Mensaje de {$name} ({$email})"
             );
-        } catch (\Throwable) {}
+        } catch (\Throwable $__ignored) {}
 
         Response::json(['ok' => true, 'id' => $id], 201);
     }

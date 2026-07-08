@@ -35,6 +35,13 @@ class AdminOrdersController
         Response::json(['ok' => true]);
     }
 
+    public static function cancelExpired(Request $req): void
+    {
+        $days = max(1, (int)($req->body['days'] ?? 3));
+        $count = OrderRepo::cancelExpiredPending($days);
+        Response::json(['cancelled' => $count]);
+    }
+
     public static function create(Request $req): void
     {
         $b = $req->body; // $_POST for multipart
@@ -134,7 +141,7 @@ class AdminOrdersController
                 "Pedido {$receipt} de {$data['customerName']} vía {$source}",
                 $orderId
             );
-        } catch (\Throwable) {}
+        } catch (\Throwable $__ignored) {}
 
         Response::json(OrderRepo::findById($orderId), 201);
     }

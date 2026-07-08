@@ -6,7 +6,7 @@ namespace App;
 // Manual PSR-4 autoloader for the App\ namespace
 // Note: subdirectories (controllers/, models/) are lowercase on disk
 spl_autoload_register(function (string $class): void {
-    if (!str_starts_with($class, 'App\\')) return;
+    if (strpos($class, 'App\\') !== 0) return;
     $parts    = explode('\\', substr($class, 4)); // strip 'App\'
     $filename = array_pop($parts) . '.php';       // e.g. AuthController.php
     // Lowercase every subdirectory segment to match disk layout

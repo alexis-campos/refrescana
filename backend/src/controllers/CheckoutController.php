@@ -94,7 +94,7 @@ class CheckoutController
                     "Pedido {$receiptNumber} de {$b['customerName']}",
                     $orderId
                 );
-            } catch (\Throwable) {}
+            } catch (\Throwable $__ignored) {}
 
             Response::json([
                 'orderId'       => $orderId,
@@ -105,7 +105,7 @@ class CheckoutController
 
         } catch (\Throwable $e) {
             if ($pdo->inTransaction()) $pdo->rollBack();
-            if ($e instanceof \RuntimeException || str_contains($e->getMessage(), 'Stock')) {
+            if ($e instanceof \RuntimeException || strpos($e->getMessage(), 'Stock') !== false) {
                 Response::error($e->getMessage());
             }
             error_log('Checkout error: ' . $e->getMessage());
@@ -139,7 +139,7 @@ class CheckoutController
         try {
             NotificationRepo::create('VOUCHER_UPLOADED', 'Comprobante Enviado',
                 "Se subió el comprobante para pedido {$orderId}", $orderId);
-        } catch (\Throwable) {}
+        } catch (\Throwable $__ignored) {}
 
         Response::json(['ok' => true, 'voucherUrl' => $url]);
     }

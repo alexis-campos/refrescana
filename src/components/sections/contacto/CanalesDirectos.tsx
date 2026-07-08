@@ -9,9 +9,9 @@ const CANALES = [
   {
     id: 'whatsapp',
     label: 'WhatsApp',
-    value: '+51 927 137 728',
+    value: '+51 943501918',
     hint: 'Respuesta en minutos',
-    href: `https://wa.me/51927137728?text=${WHATSAPP_TEXT}`,
+    href: `https://wa.me/51943501918?text=${WHATSAPP_TEXT}`,
     external: true,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -23,9 +23,9 @@ const CANALES = [
   {
     id: 'telefono',
     label: 'Teléfono',
-    value: '+51 927 137 728',
+    value: '+51 943501918',
     hint: 'Lun–Vie 9am – 6pm',
-    href: 'tel:+51927137728',
+    href: 'tel:+51943501918',
     external: false,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -36,9 +36,9 @@ const CANALES = [
   {
     id: 'email',
     label: 'Correo electrónico',
-    value: 'rolinaquino09@gmail.com',
+    value: 'refrescana.com@gmail.com',
     hint: 'Respuesta en 24 horas',
-    href: 'mailto:rolinaquino09@gmail.com',
+    href: 'mailto:refrescana.com@gmail.com',
     external: false,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

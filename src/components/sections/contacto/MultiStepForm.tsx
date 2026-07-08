@@ -164,8 +164,8 @@ function InfoPanel() {
               </svg>
             ),
             label: 'WhatsApp',
-            value: '+51 927 137 728',
-            href: 'https://wa.me/51927137728',
+            value: '+51 943 501 918',
+            href: 'https://wa.me/51943501918',
           },
           {
             icon: (
@@ -175,8 +175,8 @@ function InfoPanel() {
               </svg>
             ),
             label: 'Email',
-            value: 'rolinaquino09@gmail.com',
-            href: 'mailto:rolinaquino09@gmail.com',
+            value: 'refrescana.com@gmail.com',
+            href: 'mailto:refrescana.com@gmail.com',
           },
         ].map((c) => (
           <a

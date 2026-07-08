@@ -156,17 +156,3 @@ CREATE TABLE IF NOT EXISTS `notifications` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 SET FOREIGN_KEY_CHECKS = 1;
-
--- -------------------------------------------------------
--- Usuario admin por defecto
--- email:    admin@refrescana.com
--- password: adminrefrescana  (bcrypt)
--- -------------------------------------------------------
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`)
-VALUES (
-  '3bdf8642-b7a6-4094-8558-ad3453d058ce',
-  'Admin Refrescaña',
-  'admin@refrescana.com',
-  '$2y$12$ESAGU1dUUGPl9RedCEhZ3enpIyQyampLadtR9K/eP6fenVGItGagW',
-  'ADMIN'
-);
